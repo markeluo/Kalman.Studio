@@ -160,6 +160,18 @@ namespace Kalman.Studio
                     }
                 }
             }
+
+            if (tn != null && tn.Parent != null && tn.Level == 1 && (tvDatabase.SelectedNode.Tag is SODatabase))
+            {
+                SODatabase _db = (SODatabase)tvDatabase.SelectedNode.Tag;
+                CodeBuilder builder = this.DockPanel.ActiveDocument as CodeBuilder;
+                if (builder == null)
+                {
+                    builder = new CodeBuilder();
+                    builder.Show(this.DockPanel);
+                }
+                builder.DataBase = _db;
+            }
         }
 
         #endregion

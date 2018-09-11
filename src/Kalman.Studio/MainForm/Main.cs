@@ -656,5 +656,21 @@ namespace Kalman.Studio
 
 
         #endregion
+
+        /// <summary>
+        /// 所有表生成实体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (this.dockPanel.ActiveDocument != null)
+            {
+                if (this.dockPanel.ActiveDocument is CodeBuilder)
+                {
+                    ((CodeBuilder)this.dockPanel.ActiveDocument).FormatAllTables();
+                }
+            }
+        }
     }
 }

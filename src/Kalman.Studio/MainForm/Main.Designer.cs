@@ -55,6 +55,7 @@
             this.tsmiNewFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCreateProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCreateABPProject = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreateBeegoProject = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -102,7 +103,7 @@
             this.tsslLoading = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.tsmiCreateABPProject = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripMain.SuspendLayout();
             this.menuStripMain.SuspendLayout();
             this.MainStatusBar.SuspendLayout();
@@ -114,7 +115,7 @@
             this.toolItemNewFile.Image = ((System.Drawing.Image)(resources.GetObject("toolItemNewFile.Image")));
             this.toolItemNewFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemNewFile.Name = "toolItemNewFile";
-            this.toolItemNewFile.Size = new System.Drawing.Size(23, 22);
+            this.toolItemNewFile.Size = new System.Drawing.Size(23, 26);
             this.toolItemNewFile.Text = "新建文档";
             this.toolItemNewFile.Click += new System.EventHandler(this.toolItemNewFile_Click);
             // 
@@ -124,14 +125,14 @@
             this.toolItemOpenFile.Image = ((System.Drawing.Image)(resources.GetObject("toolItemOpenFile.Image")));
             this.toolItemOpenFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemOpenFile.Name = "toolItemOpenFile";
-            this.toolItemOpenFile.Size = new System.Drawing.Size(23, 22);
+            this.toolItemOpenFile.Size = new System.Drawing.Size(23, 26);
             this.toolItemOpenFile.Text = "打开文档";
             this.toolItemOpenFile.Click += new System.EventHandler(this.toolItemOpenFile_Click);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 29);
             // 
             // toolItemDbExplorer
             // 
@@ -139,7 +140,7 @@
             this.toolItemDbExplorer.Image = ((System.Drawing.Image)(resources.GetObject("toolItemDbExplorer.Image")));
             this.toolItemDbExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemDbExplorer.Name = "toolItemDbExplorer";
-            this.toolItemDbExplorer.Size = new System.Drawing.Size(23, 22);
+            this.toolItemDbExplorer.Size = new System.Drawing.Size(23, 26);
             this.toolItemDbExplorer.Text = "数据库对象浏览器";
             this.toolItemDbExplorer.Click += new System.EventHandler(this.toolItemDbExplorer_Click);
             // 
@@ -149,7 +150,7 @@
             this.toolItemCodeExplorer.Image = ((System.Drawing.Image)(resources.GetObject("toolItemCodeExplorer.Image")));
             this.toolItemCodeExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemCodeExplorer.Name = "toolItemCodeExplorer";
-            this.toolItemCodeExplorer.Size = new System.Drawing.Size(23, 22);
+            this.toolItemCodeExplorer.Size = new System.Drawing.Size(23, 26);
             this.toolItemCodeExplorer.Text = "代码资源管理器";
             this.toolItemCodeExplorer.Click += new System.EventHandler(this.toolItemCodeExplorer_Click);
             // 
@@ -159,7 +160,7 @@
             this.toolItemTemplateExplorer.Image = ((System.Drawing.Image)(resources.GetObject("toolItemTemplateExplorer.Image")));
             this.toolItemTemplateExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemTemplateExplorer.Name = "toolItemTemplateExplorer";
-            this.toolItemTemplateExplorer.Size = new System.Drawing.Size(23, 22);
+            this.toolItemTemplateExplorer.Size = new System.Drawing.Size(23, 26);
             this.toolItemTemplateExplorer.Text = "模板资源管理器";
             this.toolItemTemplateExplorer.Click += new System.EventHandler(this.toolItemTemplateExplorer_Click);
             // 
@@ -169,14 +170,14 @@
             this.toolItemPdmExplorer.Image = ((System.Drawing.Image)(resources.GetObject("toolItemPdmExplorer.Image")));
             this.toolItemPdmExplorer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemPdmExplorer.Name = "toolItemPdmExplorer";
-            this.toolItemPdmExplorer.Size = new System.Drawing.Size(23, 22);
+            this.toolItemPdmExplorer.Size = new System.Drawing.Size(23, 26);
             this.toolItemPdmExplorer.Text = "PDM模型对象浏览器";
             this.toolItemPdmExplorer.Click += new System.EventHandler(this.toolItemPdmExplorer_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 29);
             // 
             // toolItemDbSchema
             // 
@@ -184,7 +185,7 @@
             this.toolItemDbSchema.Image = ((System.Drawing.Image)(resources.GetObject("toolItemDbSchema.Image")));
             this.toolItemDbSchema.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemDbSchema.Name = "toolItemDbSchema";
-            this.toolItemDbSchema.Size = new System.Drawing.Size(23, 22);
+            this.toolItemDbSchema.Size = new System.Drawing.Size(23, 26);
             this.toolItemDbSchema.Text = "数据库架构查看器";
             this.toolItemDbSchema.Click += new System.EventHandler(this.toolItemDbSchema_Click);
             // 
@@ -194,34 +195,34 @@
             this.toolItemWebSubmitter.Image = ((System.Drawing.Image)(resources.GetObject("toolItemWebSubmitter.Image")));
             this.toolItemWebSubmitter.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemWebSubmitter.Name = "toolItemWebSubmitter";
-            this.toolItemWebSubmitter.Size = new System.Drawing.Size(23, 22);
+            this.toolItemWebSubmitter.Size = new System.Drawing.Size(23, 26);
             this.toolItemWebSubmitter.Text = "Web客户端模拟器";
             this.toolItemWebSubmitter.Click += new System.EventHandler(this.toolItemWebSubmitter_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 29);
             // 
             // toolItemDbList
             // 
             this.toolItemDbList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolItemDbList.Name = "toolItemDbList";
-            this.toolItemDbList.Size = new System.Drawing.Size(150, 25);
+            this.toolItemDbList.Size = new System.Drawing.Size(150, 29);
             this.toolItemDbList.ToolTipText = "数据库列表";
             this.toolItemDbList.SelectedIndexChanged += new System.EventHandler(this.toolItemDbList_SelectedIndexChanged);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 29);
             // 
             // toolItemExecSql
             // 
             this.toolItemExecSql.Image = ((System.Drawing.Image)(resources.GetObject("toolItemExecSql.Image")));
             this.toolItemExecSql.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemExecSql.Name = "toolItemExecSql";
-            this.toolItemExecSql.Size = new System.Drawing.Size(75, 22);
+            this.toolItemExecSql.Size = new System.Drawing.Size(75, 26);
             this.toolItemExecSql.Text = "执行SQL";
             this.toolItemExecSql.ToolTipText = "执行SQL[快捷键F5]";
             this.toolItemExecSql.Click += new System.EventHandler(this.toolItemExecSql_Click);
@@ -229,7 +230,7 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 29);
             // 
             // toolItemBuildCode
             // 
@@ -253,7 +254,7 @@
             this.toolItemExit.Image = ((System.Drawing.Image)(resources.GetObject("toolItemExit.Image")));
             this.toolItemExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItemExit.Name = "toolItemExit";
-            this.toolItemExit.Size = new System.Drawing.Size(23, 22);
+            this.toolItemExit.Size = new System.Drawing.Size(23, 26);
             this.toolItemExit.Text = "退出";
             this.toolItemExit.Click += new System.EventHandler(this.toolItemExit_Click);
             // 
@@ -276,13 +277,14 @@
             this.toolItemExecSql,
             this.toolStripSeparator5,
             this.toolItemBuildCode,
+            this.toolStripButton1,
             this.toolItemBuildCodeSeparator,
             this.toolItemExit,
             this.toolComboBox_DB,
             this.toolComboBox_Table});
             this.toolStripMain.Location = new System.Drawing.Point(0, 25);
             this.toolStripMain.Name = "toolStripMain";
-            this.toolStripMain.Size = new System.Drawing.Size(636, 25);
+            this.toolStripMain.Size = new System.Drawing.Size(636, 29);
             this.toolStripMain.TabIndex = 3;
             this.toolStripMain.Text = "toolStrip1";
             // 
@@ -290,7 +292,7 @@
             // 
             this.toolComboBox_DB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolComboBox_DB.Name = "toolComboBox_DB";
-            this.toolComboBox_DB.Size = new System.Drawing.Size(125, 29);
+            this.toolComboBox_DB.Size = new System.Drawing.Size(125, 25);
             this.toolComboBox_DB.Visible = false;
             // 
             // toolComboBox_Table
@@ -329,32 +331,39 @@
             this.tsmiCreateBeegoProject});
             this.menuItemNew.Name = "menuItemNew";
             this.menuItemNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.menuItemNew.Size = new System.Drawing.Size(180, 22);
+            this.menuItemNew.Size = new System.Drawing.Size(174, 22);
             this.menuItemNew.Text = "新建(&N)";
             // 
             // tsmiNewFile
             // 
             this.tsmiNewFile.Name = "tsmiNewFile";
-            this.tsmiNewFile.Size = new System.Drawing.Size(180, 22);
+            this.tsmiNewFile.Size = new System.Drawing.Size(138, 22);
             this.tsmiNewFile.Text = "文件";
             this.tsmiNewFile.Click += new System.EventHandler(this.tsmiNewFile_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(135, 6);
             // 
             // tsmiCreateProject
             // 
             this.tsmiCreateProject.Name = "tsmiCreateProject";
-            this.tsmiCreateProject.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCreateProject.Size = new System.Drawing.Size(138, 22);
             this.tsmiCreateProject.Text = "项目";
             this.tsmiCreateProject.Click += new System.EventHandler(this.tsmiCreateProject_Click);
+            // 
+            // tsmiCreateABPProject
+            // 
+            this.tsmiCreateABPProject.Name = "tsmiCreateABPProject";
+            this.tsmiCreateABPProject.Size = new System.Drawing.Size(138, 22);
+            this.tsmiCreateABPProject.Text = "ABP项目";
+            this.tsmiCreateABPProject.Click += new System.EventHandler(this.tsmiCreateABPProject_Click);
             // 
             // tsmiCreateBeegoProject
             // 
             this.tsmiCreateBeegoProject.Name = "tsmiCreateBeegoProject";
-            this.tsmiCreateBeegoProject.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCreateBeegoProject.Size = new System.Drawing.Size(138, 22);
             this.tsmiCreateBeegoProject.Text = "Beego项目";
             this.tsmiCreateBeegoProject.Click += new System.EventHandler(this.tsmiCreateBeegoProject_Click);
             // 
@@ -362,65 +371,65 @@
             // 
             this.menuItemOpen.Name = "menuItemOpen";
             this.menuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.menuItemOpen.Size = new System.Drawing.Size(180, 22);
+            this.menuItemOpen.Size = new System.Drawing.Size(174, 22);
             this.menuItemOpen.Text = "打开(&O)...";
             this.menuItemOpen.Click += new System.EventHandler(this.menuItemOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(171, 6);
             // 
             // menuItemClose
             // 
             this.menuItemClose.Name = "menuItemClose";
-            this.menuItemClose.Size = new System.Drawing.Size(180, 22);
+            this.menuItemClose.Size = new System.Drawing.Size(174, 22);
             this.menuItemClose.Text = "关闭";
             this.menuItemClose.Click += new System.EventHandler(this.menuItemClose_Click);
             // 
             // menuItemCloseOther
             // 
             this.menuItemCloseOther.Name = "menuItemCloseOther";
-            this.menuItemCloseOther.Size = new System.Drawing.Size(180, 22);
+            this.menuItemCloseOther.Size = new System.Drawing.Size(174, 22);
             this.menuItemCloseOther.Text = "除此之外全部关闭";
             this.menuItemCloseOther.Click += new System.EventHandler(this.menuItemCloseOther_Click);
             // 
             // menuItemCloseAll
             // 
             this.menuItemCloseAll.Name = "menuItemCloseAll";
-            this.menuItemCloseAll.Size = new System.Drawing.Size(180, 22);
+            this.menuItemCloseAll.Size = new System.Drawing.Size(174, 22);
             this.menuItemCloseAll.Text = "全部关闭";
             this.menuItemCloseAll.Click += new System.EventHandler(this.menuItemCloseAll_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(171, 6);
             // 
             // menuItemSave
             // 
             this.menuItemSave.Name = "menuItemSave";
             this.menuItemSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.menuItemSave.Size = new System.Drawing.Size(180, 22);
+            this.menuItemSave.Size = new System.Drawing.Size(174, 22);
             this.menuItemSave.Text = "保存(&S)";
             this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
             // 
             // menuItemSaveAs
             // 
             this.menuItemSaveAs.Name = "menuItemSaveAs";
-            this.menuItemSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.menuItemSaveAs.Size = new System.Drawing.Size(174, 22);
             this.menuItemSaveAs.Text = "另存为...";
             this.menuItemSaveAs.Click += new System.EventHandler(this.menuItemSaveAs_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(171, 6);
             // 
             // menuItemExit
             // 
             this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(180, 22);
+            this.menuItemExit.Size = new System.Drawing.Size(174, 22);
             this.menuItemExit.Text = "退出";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
             // 
@@ -721,17 +730,21 @@
             // 
             this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel.DockBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dockPanel.Location = new System.Drawing.Point(0, 50);
+            this.dockPanel.Location = new System.Drawing.Point(0, 54);
             this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(636, 367);
+            this.dockPanel.Size = new System.Drawing.Size(636, 363);
             this.dockPanel.TabIndex = 29;
             // 
-            // tsmiCreateABPProject
+            // toolStripButton1
             // 
-            this.tsmiCreateABPProject.Name = "tsmiCreateABPProject";
-            this.tsmiCreateABPProject.Size = new System.Drawing.Size(180, 22);
-            this.tsmiCreateABPProject.Text = "ABP项目";
-            this.tsmiCreateABPProject.Click += new System.EventHandler(this.tsmiCreateABPProject_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 26);
+            this.toolStripButton1.Text = "所有表";
+            this.toolStripButton1.ToolTipText = "所有表生成实体";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // Main
             // 
@@ -836,5 +849,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiNewFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiCreateProject;
         private System.Windows.Forms.ToolStripMenuItem tsmiCreateABPProject;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

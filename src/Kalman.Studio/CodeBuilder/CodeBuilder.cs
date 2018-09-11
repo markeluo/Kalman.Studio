@@ -27,6 +27,10 @@ namespace Kalman.Studio
         string _CodeType = CodeType.CSHARP;
         public SOTable Table { get; set; }
         public List<SOColumn> ColumnList { get; set; }
+        /// <summary>
+        /// 数据库(用于将数据库中所有表生成实体对象)
+        /// </summary>
+        public SODatabase DataBase { get; set; }
 
         private void CodeBuilder_Load(object sender, EventArgs e)
         {
@@ -412,7 +416,89 @@ namespace Kalman.Studio
             }
         }
 
-        
-        
+
+        #region A.转换数据库下的所有Table
+        public void FormatAllTables()
+        {
+            if (DataBase != null && DataBase.TableList != null)
+            {
+                string temppath = gbTemplateFile.Text;
+                bool isnext = false;
+                if (!string.IsNullOrWhiteSpace(temppath))
+                {
+                    if (temppath.IndexOf("/") > -1 || temppath.IndexOf("\\") > -1 && temppath.IndexOf(".tt") > 0)
+                    {
+                        isnext = true;
+                    }
+                }
+                if (!isnext)
+                {
+                    Config.MainForm.SetStatusText("请选择要使用的模板!");
+                    return;
+                }
+                //选择转化后实体文件保存的目录
+                FolderBrowserDialog dialog = new FolderBrowserDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string savedir = dialog.SelectedPath;
+                    List<SOTable> alltables = DataBase.TableList;
+
+                    Config.MainForm.SetStatusText("正在生成代码...");
+                    if (alltables != null && alltables.Count > 0)
+                    {
+                        foreach (SOTable _item in alltables)
+                        {
+                            FoarmatClassByTable(_item,temppath,savedir);
+                        }
+                    }
+
+                    Config.MainForm.SetStatusText();
+                }
+            }
+            else
+            {
+                Config.MainForm.SetStatusText("请双击选择数据库!");
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_tab">要转化的数据表</param>
+        /// <param name="strtemplatefile">使用的模板文件</param>
+        /// <param name="savepath">保存文件夹</param>
+        private void FoarmatClassByTable(SOTable _tab,string strtemplatefile, string savepath)
+        {
+            ////模板路径
+            //C:\Users\marke\Desktop\Kalman.Studio\Kalman.Studio\src\Kalman.Studio\bin\Debug\T4Template\Asp.Net\Ebboy\Entity\Model.tt
+            TableHost host = new TableHost();
+            host.Table = _tab;
+            //模板路径
+            host.TemplateFile = strtemplatefile;
+            //要显示的属性列表
+            host.ColumnList = _tab.ColumnList;
+
+            Engine engine = new Engine();
+            var sw = new Stopwatch();
+            var content = File.ReadAllText(host.TemplateFile);
+            //读取模板内容并替换表相关字段、名称内容
+            string outputContent = engine.ProcessTemplate(content, host);
+
+            StringBuilder sb = new StringBuilder();
+            if (host.ErrorCollection.HasErrors)
+            {
+                foreach (CompilerError err in host.ErrorCollection)
+                {
+                    sb.AppendLine(err.ToString());
+                }
+                outputContent = outputContent + Environment.NewLine + sb.ToString();
+            }
+
+            string strsavepath =Path.Combine(savepath,(_tab.Name + CodeTypeHelper.GetExtention(_CodeType)));
+            textEditorControl2.Text = outputContent;
+            textEditorControl2.SaveFile(strsavepath);
+
+        }
+        #endregion
     }
 }
